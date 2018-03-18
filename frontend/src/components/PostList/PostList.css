@@ -1,0 +1,17 @@
+.postList {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-around;
+  /* justify-content: flex-start; */
+  /* margin: 0; */
+  /* padding: 5px; */
+  flex-wrap: wrap;
+}
+.postListItem {
+  margin-left: 20px;
+  cursor: pointer;
+  list-style-type: none;
+  position: relative;
+  padding: 10px;
+}

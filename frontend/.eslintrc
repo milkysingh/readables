@@ -12,6 +12,7 @@
     "browser": true
   },
   "rules": {
+    "no-param-reassign": 0,
     "no-console": "off",
     "react/jsx-filename-extension": 0,
     "react/forbid-prop-types": [0, { "forbid": ["any", "array"] }],

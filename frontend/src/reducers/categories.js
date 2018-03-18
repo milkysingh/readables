@@ -7,7 +7,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_CATEGORIES:
-      return action.payload;
+      return { categories: action.payload };
 
     default:
       return state;

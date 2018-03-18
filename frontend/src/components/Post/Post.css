@@ -1,0 +1,43 @@
+.scoreDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 17px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.postControls {
+  font-size: 20px;
+}
+.scoreControl {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.postCard {
+  position: relative;
+  transition: top 0.1s ease-in;
+}
+.postCard i {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+.postCard i:hover {
+  font-size: 35px;
+}
+.postCard i:active {
+  color: blue;
+  top: 2px;
+}
+
+.postCard:hover {
+  top: 2px;
+}
+.postCard:active {
+  top: 4px;
+}

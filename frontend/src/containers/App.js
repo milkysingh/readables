@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+
 import { BrowserRouter, Route } from 'react-router-dom';
-import Home from './Home';
+import Home from './Home/index';
 
 class App extends Component {
   render() {
