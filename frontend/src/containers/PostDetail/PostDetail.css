@@ -1,0 +1,54 @@
+.main {
+  padding: 50px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+.scores {
+  display: flex;
+  background-color: rgb(2, 12, 22);
+  max-width: 200px;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+.scoreControl {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+i {
+  transition: font-size 0.15s ease-in;
+  position: relative;
+}
+.scoreControl i:hover {
+  font-size: 35px;
+}
+
+.scoreControl i:active {
+  color: blue;
+  top: 2px;
+}
+.postBody {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.commentHead {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-family: 'Oswald', sans-serif;
+}

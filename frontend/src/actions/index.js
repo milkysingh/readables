@@ -12,3 +12,15 @@ export const getAllPosts = () => async (dispatch) => {
   console.log(data);
   dispatch({ type: actionTypes.GET_ALL_POSTS, payload: data });
 };
+
+export const getPostDetail = pid => async (dispatch) => {
+  const { data } = await axios.get(`http://localhost:3001/posts/${pid}`, header);
+
+  dispatch({ type: actionTypes.SELECTED_POST, payload: data });
+};
+
+export const getComments = pid => async (dispatch) => {
+  const { data } = await axios.get(`http://localhost:3001/posts/${pid}/comments`, header);
+
+  dispatch({ type: actionTypes.GET_COMMENTS, payload: data });
+};

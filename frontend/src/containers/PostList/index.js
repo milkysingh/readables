@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../../actions';
-import Post from '../Post';
+
+import Post from '../../components/Post';
 import classes from './PostList.css';
 
 class PostList extends Component {

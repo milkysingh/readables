@@ -10,9 +10,11 @@
   font-family: 'Lobster', cursive;
   height: 75px;
   justify-content: center;
+}
+.headTitle {
   transition: font-size 0.35s ease-in-out;
   cursor: pointer;
 }
-.head:hover {
+.headTitle:hover {
   font-size: 45px;
 }

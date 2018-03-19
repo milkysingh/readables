@@ -38,6 +38,3 @@
 .postCard:hover {
   top: 2px;
 }
-.postCard:active {
-  top: 4px;
-}
