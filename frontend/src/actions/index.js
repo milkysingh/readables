@@ -24,3 +24,9 @@ export const getComments = pid => async (dispatch) => {
 
   dispatch({ type: actionTypes.GET_COMMENTS, payload: data });
 };
+
+export const setPostVotes = (pid, option) => async (dispatch) => {
+  const { data } = await axios.post(`http://localhost:3001/posts/${pid}`, { option }, header);
+
+  dispatch({ type: actionTypes.SET_VOTE, payload: data });
+};

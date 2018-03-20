@@ -38,3 +38,12 @@
 .postCard:hover {
   top: 2px;
 }
+
+.voteButton {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.voteButton:focus {
+  outline: 0;
+}

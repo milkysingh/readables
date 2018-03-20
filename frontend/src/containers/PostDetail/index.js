@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getPostDetail } from '../../actions';
+import { getPostDetail, setPostVotes } from '../../actions';
+import constant from '../../constant';
 import classes from './PostDetail.css';
 import Comments from '../Comments';
 
@@ -9,6 +10,11 @@ class PostDetail extends Component {
   componentDidMount() {
     this.props.getPostDetail(this.props.match.params.pid);
   }
+
+  scoreHandler = (option) => {
+    this.props.setVote(this.props.match.params.pid, option);
+  };
+
   render() {
     const { selectedPost } = this.props;
     return (
@@ -28,8 +34,18 @@ class PostDetail extends Component {
 
               <p className={classes.postBody}>{selectedPost.body}</p>
               <div className={classes.scoreControl}>
-                <i className="fas fa-thumbs-up" />
-                <i className="fas fa-thumbs-down" />
+                <button
+                  onClick={() => this.scoreHandler(constant.UP_VOTE)}
+                  className={classes.voteButton}
+                >
+                  <i className="fas fa-thumbs-up" />
+                </button>
+                <button
+                  onClick={() => this.scoreHandler(constant.DOWN_VOTE)}
+                  className={classes.voteButton}
+                >
+                  <i className="fas fa-thumbs-down" />
+                </button>
               </div>
             </div>
             <h3 className={classes.commentHead}>Comments</h3>
@@ -45,14 +61,16 @@ class PostDetail extends Component {
 
 PostDetail.propTypes = {
   selectedPost: PropTypes.object,
-  getPostDetail: PropTypes.func,
+  getPostDetail: PropTypes.func.isRequired,
+  setVote: PropTypes.func.isRequired,
 };
 PostDetail.defaultProps = {
   selectedPost: null,
-  getPostDetail: null,
+  // getPostDetail: null,
 };
 const mapDispatchToProps = dispatch => ({
   getPostDetail: pid => dispatch(getPostDetail(pid)),
+  setVote: (pid, option) => dispatch(setPostVotes(pid, option)),
 });
 const mapStateToProps = ({ posts: { selectedPost } }) => ({
   selectedPost,

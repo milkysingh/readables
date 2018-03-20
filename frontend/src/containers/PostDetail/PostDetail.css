@@ -52,3 +52,12 @@ i {
   margin-bottom: 30px;
   font-family: 'Oswald', sans-serif;
 }
+
+.voteButton {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.voteButton:focus {
+  outline: 0;
+}
