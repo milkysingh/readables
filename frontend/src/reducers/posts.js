@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialPosts = {
   allPosts: [],
   selectedPost: null,
+  selectedCategory: '',
 };
 
 export default (state = initialPosts, action) => {
@@ -28,6 +29,9 @@ export default (state = initialPosts, action) => {
         selectedPost: action.payload,
       };
     }
+
+    case actionTypes.GET_POSTS_BY_CATEGORY:
+      return { allPosts: action.payload.data, selectedCategory: action.payload.category };
 
     default:
       return state;

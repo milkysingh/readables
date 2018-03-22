@@ -4,3 +4,4 @@ export const SELECTED_POST = 'SELECTED_POST';
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const SET_SCORE = 'SET_SCORE';
 export const SET_VOTE = 'SET_VOTE';
+export const GET_POSTS_BY_CATEGORY = 'GET_POSTS_BY_CATEGORY';

@@ -10,21 +10,30 @@
   list-style-type: none;
   position: relative;
   background: snow;
-  width: 100px;
-  height: 50px;
-  margin: 10px;
+}
+.clistButton {
+  padding: 0;
+  background: none;
   text-align: center;
   font-size: 20px;
   text-transform: capitalize;
   border: 2px solid black;
   font-weight: 900;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
 }
+.clistButton:focus {
+  outline: 0;
+}
+
 .clistItem:hover {
   border-bottom: 1px solid black;
 }
 .clistItem:active {
   box-shadow: none;
   top: 4px;
+  border-bottom: 1px solid green;
 }
 @media screen and (max-width: 1000px) {
   .clistItem {

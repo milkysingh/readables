@@ -64,4 +64,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(Post);
 Post.propTypes = {
   postItem: PropTypes.object.isRequired,
+  setVote: PropTypes.func.isRequired,
 };

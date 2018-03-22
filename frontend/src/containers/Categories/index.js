@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCategories } from '../../actions';
+import { getCategories, getPostsByCategory } from '../../actions';
 import classes from './categories.css';
 
 class Category extends Component {
@@ -12,7 +12,13 @@ class Category extends Component {
     const renderCategories = this.props.categories
       ? this.props.categories.map(cat => (
         <li key={cat.name} className={classes.clistItem}>
-          {cat.name}
+          <button
+            className={classes.clistButton}
+            onClick={() => this.props.getPostsByCategory(cat.name)}
+          >
+            {' '}
+            {cat.name}
+          </button>
         </li>
       ))
       : '';
@@ -25,15 +31,20 @@ class Category extends Component {
 }
 
 Category.propTypes = {
-  getCategories: PropTypes.func,
+  getCategories: PropTypes.func.isRequired,
   categories: PropTypes.array,
+  getPostsByCategory: PropTypes.func.isRequired,
 };
 Category.defaultProps = {
-  getCategories: null,
   categories: [],
 };
 
 const mapStateToProps = ({ category: { categories } }) => ({
   categories,
 });
-export default connect(mapStateToProps, { getCategories })(Category);
+
+const mapDispatchToProps = dispatch => ({
+  getPostsByCategory: category => dispatch(getPostsByCategory(category)),
+  getCategories: () => dispatch(getCategories()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
